@@ -5,25 +5,32 @@
  </head>
 
 <body>
-     <div id="app"></div>
+     <div id="practice"></div>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
      <script type="text/babel">
-        class Greeting extends React.Component {
+        class ClickMe extends React.Component {
+        constructor(props){
+          super(props);
+          this.state = {
+            default: 'user',
+            counter: 0
+          }
+        }
          render() {
            return (
              <div>
-               <h1>Hello {this.props.name}!</h1>
+               <button>Click Me, {this.state.default}!</button>
+               <div>{this.state.counter}</div>
              </div>
            );
          }
        }
- 
        ReactDOM.render(
-         <Greeting name="Bloc Student" />, document.getElementById('app')
+         <ClickMe name="User" />, document.getElementById(
+           "practice")
        );
      </script>
 </body>
 </html>
-
